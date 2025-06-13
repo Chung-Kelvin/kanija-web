@@ -1,0 +1,9 @@
+<div class="carousel w-full">
+  <img [src]="images[currentIndex]" alt="carousel image" class="carousel-img">
+  <button (click)="prev()">‹</button>
+  <button (click)="next()">›</button>
+  <div class="swiper-pagination">
+    <span *ngFor="let image of images; let i = index" [class.active]="i === currentIndex"
+          class="swiper-pagination-bullet"></span>
+  </div>
+</div>
