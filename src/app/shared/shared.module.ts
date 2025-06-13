@@ -4,6 +4,7 @@ import {LayoutComponent} from './layout/layout.component';
 import {RouterModule} from "@angular/router";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatIconModule} from "@angular/material/icon";
+import {ComponentModule} from "./component/component.module";
 
 
 @NgModule({
@@ -11,7 +12,7 @@ import {MatIconModule} from "@angular/material/icon";
     LayoutComponent
   ],
   imports: [
-    CommonModule, RouterModule, MatMenuModule, MatIconModule
+    CommonModule, RouterModule, MatMenuModule, MatIconModule, ComponentModule
   ],
   exports: [LayoutComponent]
 })
