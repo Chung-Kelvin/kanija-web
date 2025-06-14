@@ -1,0 +1,19 @@
+<div class="bg-stone-800 flex items-center">
+  <ul class="mx-20 flex text-gray-700 font-medium">
+
+    <ng-container *ngFor="let item of menuConfig">
+      <li>
+        <a
+          class="block px-3 py-3 text-sm text-slate-50 font-bold uppercase font-montserrat hover:text-gray-700 hover:bg-gray-50 transition"
+          href="#"
+        ><span>{{ item.label }}</span></a
+        >
+      </li>
+    </ng-container>
+  </ul>
+</div>
+<ng-template #subMenuTemp>
+  <div class="w-full h-96 bg-slate-50">
+    <span>submenu</span>
+  </div>
+</ng-template>
