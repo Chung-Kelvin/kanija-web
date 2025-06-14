@@ -1,0 +1,92 @@
+.card-product {
+  max-width: 326px;
+
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.dev/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+
+.product-item__color-option {
+  background-image: url('/assets/img/product/mini-img/6tl25s001-sk124-m-1-u.webp');
+  width: 42px;
+  height: 56px;
+  min-width: 42px;
+  display: inline-block;
+  border-radius: 0;
+  margin: 0 4px 4px 0;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover !important;
+  padding: 0;
+  background-clip: content-box !important;
+  cursor: pointer;
+  position: relative;
+}
+
+.product-item__name {
+  display: block;
+  color: #333f48;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.46;
+  margin: 0 0 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-item__price {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.product-item__price--regular {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333f48;
+}
+
+.product-item__price--normal {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  order: 3;
+  color: #da291c;
+}
+
+.product-item__price--percent {
+  order: 2;
+  font-weight: 700;
+  color: #da291c;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.product-item__price--old {
+  margin-right: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #74869b;
+  order: 1;
+  -webkit-text-decoration-line: line-through;
+  text-decoration-line: line-through;
+}
+
+.product-item__label--text {
+  color: #da291c;
+  background-color: #fbe9e8;
+  border-radius: 2px;
+  padding: 2px 6px;
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+}
