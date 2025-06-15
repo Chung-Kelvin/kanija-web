@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'kan-input',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent {
-
+  name: string = '';
 }
