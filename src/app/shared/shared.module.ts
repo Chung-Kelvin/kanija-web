@@ -5,16 +5,17 @@ import {RouterModule} from "@angular/router";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatIconModule} from "@angular/material/icon";
 import {ComponentModule} from "./component/component.module";
+import {LayoutAdminComponent} from "./layout-admin/layout-admin.component";
 
 
 @NgModule({
   declarations: [
-    LayoutComponent
+    LayoutComponent, LayoutAdminComponent
   ],
   imports: [
     CommonModule, RouterModule, MatMenuModule, MatIconModule, ComponentModule
   ],
-  exports: [LayoutComponent]
+  exports: [LayoutComponent, LayoutAdminComponent]
 })
 export class SharedModule {
 }
