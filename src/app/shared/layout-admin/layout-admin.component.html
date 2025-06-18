@@ -1,0 +1,59 @@
+<header class="header fixed top-0 left-0 w-full z-50 flex items-center" id="header">
+
+  <div class="flex items-center justify-between">
+    <a class="logo flex items-center" href="index.html">
+      <img alt="" src="assets/img/logo/logo.png">
+      <span class="hidden lg:block">Kanija</span>
+    </a>
+    <mat-icon aria-hidden="false" aria-label="Example home icon" class="text-3xl cursor-pointer ml-2.5"
+              fontIcon="menu"></mat-icon>
+  </div>
+
+  <div class="search-bar">
+    <form action="#" class="search-form flex items-center" method="POST">
+      <input name="query" placeholder="Search" title="Enter search keyword" type="text">
+      <button title="Search" type="submit"><i class="bi bi-search"></i></button>
+    </form>
+  </div>
+
+</header>
+
+<aside class="sidebar" id="sidebar">
+  <ul class="sidebar-nav" id="sidebar-nav">
+    <li class="nav-item">
+      <a class="nav-link " href="index.html">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" class="text-3xl cursor-pointer"
+                  fontIcon="dashboard"></mat-icon>
+        <span>Dashboard</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+    </li><!-- End Components Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="forms-nav">
+        <li>
+          <a href="forms-elements.html">
+            <i class="bi bi-circle"></i><span>Form Elements</span>
+          </a>
+        </li>
+
+      </ul>
+    </li><!-- End Forms Nav -->
+  </ul>
+</aside>
+<footer class="footer" id="footer">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Kanija</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+
+    Designed by <a href="https://www.facebook.com/chunghokage">Chung Kelvin</a>
+  </div>
+</footer><!-- End Footer -->
