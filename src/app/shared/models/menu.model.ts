@@ -9,30 +9,58 @@ export interface IMenuItem {
 export const MENU_CONFIG: IMenuItem[] = [
   {
     label: 'Nữ',
-    route: '/nu'
+    route: '/nu',
   },
   {
     label: 'Nam',
-    route: '/nam'
+    route: '/nam',
   },
   {
     label: 'Bé gái',
-    route: '/girl'
+    route: '/girl',
   },
   {
     label: 'Bé trai',
-    route: '/boy'
+    route: '/boy',
   },
   {
     label: 'Sản phẩm mới',
-    route: '/new-product'
+    route: '/new-product',
   },
   {
     label: 'BTS Em ơi em à',
-    route: '/bst-em-oi-em-a'
+    route: '/bst-em-oi-em-a',
   },
   {
     label: 'Canifa s',
-    route: '/canifa-s'
+    route: '/canifa-s',
   },
-]
+];
+
+export const MENU_CONFIG_ADMIN: IMenuItem[] = [
+  {
+    label: 'Dashboard',
+    icon: 'fa fa-cubes',
+    route: '/admin/product',
+  },
+  {
+    label: 'Quản lý sản phẩm',
+    icon: 'fa fa-cubes',
+    route: '/admin/product',
+  },
+  {
+    label: 'Quản lý đơn hàng',
+    icon: 'fa fa-shopping-cart',
+    route: '/admin/order',
+  },
+  {
+    label: 'Quản lý người dùng',
+    icon: 'fa fa-users',
+    route: '/admin/user',
+  },
+  {
+    label: 'Thống kê',
+    icon: 'fa fa-bar-chart',
+    route: '/admin/statistic',
+  },
+];
