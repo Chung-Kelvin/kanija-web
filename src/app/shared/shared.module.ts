@@ -10,6 +10,7 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { ControlModule } from './control/control.module';
 
 @NgModule({
   declarations: [LayoutComponent, LayoutAdminComponent],
@@ -24,6 +25,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
     NzMenuModule,
     NzLayoutModule,
     NzIconModule,
+    ControlModule,
   ],
   exports: [LayoutComponent, LayoutAdminComponent],
 })
