@@ -1,0 +1,11 @@
+<img
+  [src]="kSrc"
+  [alt]="kAlt"
+  [ngClass]="{
+    'rounded-full': kShape === 'circle',
+    'rounded-lg': kShape === 'square',
+    'max-h-9': kSize === 'small',
+    'max-h-12': kSize === 'medium',
+    'max-h-16': kSize === 'large',
+  }"
+/>
