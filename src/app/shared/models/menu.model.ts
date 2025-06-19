@@ -4,6 +4,8 @@ export interface IMenuItem {
   route?: string;
   children?: IMenuItem[];
   permission?: string;
+  expanded?: boolean;
+  firstLevel?: boolean;
 }
 
 export const MENU_CONFIG: IMenuItem[] = [
@@ -39,28 +41,54 @@ export const MENU_CONFIG: IMenuItem[] = [
 
 export const MENU_CONFIG_ADMIN: IMenuItem[] = [
   {
-    label: 'Dashboard',
-    icon: 'fa fa-cubes',
-    route: '/admin/product',
+    icon: 'home',
+    label: 'Trang chủ',
+    route: '/home',
+    firstLevel: true
   },
   {
-    label: 'Quản lý sản phẩm',
-    icon: 'fa fa-cubes',
-    route: '/admin/product',
+    icon: 'person',
+    label: 'Sản phẩm',
+    firstLevel: true,
+    children: [
+      {
+        icon: 'face',
+        label: 'Điện thoại',
+        children: [
+          {
+            icon: 'groups',
+            label: 'iPhone',
+            route: '/products/iphone'
+          },
+          {
+            icon: 'group',
+            label: 'Samsung',
+            route: '/products/samsung'
+          }
+        ]
+      },
+      {
+        icon: 'group',
+        label: 'Laptop',
+        children: [
+          {
+            icon: 'group',
+            label: 'MacBook',
+            route: '/products/macbook'
+          },
+          {
+            icon: 'group',
+            label: 'Dell',
+            route: '/products/dell'
+          }
+        ]
+      }
+    ]
   },
   {
-    label: 'Quản lý đơn hàng',
-    icon: 'fa fa-shopping-cart',
-    route: '/admin/order',
-  },
-  {
-    label: 'Quản lý người dùng',
-    icon: 'fa fa-users',
-    route: '/admin/user',
-  },
-  {
-    label: 'Thống kê',
-    icon: 'fa fa-bar-chart',
-    route: '/admin/statistic',
+    icon: 'home',
+    label: 'Trang chủ',
+    route: '/home',
+    firstLevel: true
   },
 ];

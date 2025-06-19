@@ -5,15 +5,10 @@
 >
   <div class="flex items-center justify-between">
     <a class="logo flex items-center" href="index.html">
-      <img alt="" src="assets/img/logo/logo.png" />
+      <img alt="" src="assets/img/logo/logo.png"/>
       <span class="hidden lg:block">Kanija</span>
     </a>
-    <mat-icon
-      aria-hidden="false"
-      aria-label="Example home icon"
-      class="text-3xl cursor-pointer ml-2.5"
-      fontIcon="menu"
-    ></mat-icon>
+
   </div>
 
   <div class="search-bar">
@@ -38,27 +33,69 @@
 <!-- End Header-->
 
 <!--Sidebar-->
-<aside class="sidebar" id="sidebar">
+<aside [ngClass]="{ 'sidebar__expend': isCollapsed, 'sidebar__unexpend': !isCollapsed }" class="sidebar" id="sidebar">
   <ul class="sidebar-nav" id="sidebar-nav">
     <ng-container *ngFor="let item of menuItems">
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          [routerLink]="item.route"
-          [routerLinkActive]="'active'"
-        >
-          <mat-icon
-            aria-hidden="false"
-            aria-label="Example home icon"
-            class="text-3xl cursor-pointer"
-            fontIcon="{{ item.icon }}"
-          ></mat-icon>
-          <span>{{ item.label }}</span>
-        </a>
-      </li>
+      <ng-container *ngTemplateOutlet="renderItem,context:{$implicit:item}"></ng-container>
     </ng-container>
-    <!-- End Dashboard Nav -->
+
+    <ng-template #renderItem let-item>
+      <li (click)="toggle(item, $event)"
+          (mouseenter)="item.hover = true"
+          (mouseleave)="item.hover = false"
+          class="nav-item"
+      >
+        <a *ngIf="item.route; else noRoute" [routerLink]="item.route" class="nav-link">
+          <ng-container *ngIf="item.firstLevel">
+            <mat-icon
+              aria-hidden="false"
+              aria-label="icon menu item"
+              class="text-2xl cursor-pointer"
+              fontIcon="{{ item.icon }}"
+            ></mat-icon>
+          </ng-container>
+          <span
+            *ngIf="isCollapsed||!item.firstLevel"
+            class="pl-4">{{ item.label }}</span>
+        </a>
+        <ng-template #noRoute>
+          <span class="nav-link">
+           <ng-container *ngIf="item.firstLevel">
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example home icon"
+                class="text-3xl cursor-pointer"
+                fontIcon="{{ item.icon }}"
+              ></mat-icon>
+           </ng-container>
+            <span
+              *ngIf="isCollapsed||!item.firstLevel"
+              class="pl-4">{{ item.label }}</span>
+          </span>
+        </ng-template>
+        <!--
+           [ngClass]="{ 'invisible w-0': !(isCollapsed||!item.firstLevel), 'visible w-auto': isCollapsed||!item.firstLevel }"
+        -->
+        <ul
+          *ngIf="item.children && (item.hover || item.expanded)"
+          class="submenu">
+          <ng-container *ngFor="let child of item.children">
+            <ng-container *ngTemplateOutlet="renderItem; context: { $implicit: child }"></ng-container>
+          </ng-container>
+        </ul>
+      </li>
+    </ng-template>
   </ul>
+  <div class="nav-link ">
+    <mat-icon
+      (click)="isCollapsed=!isCollapsed"
+      aria-hidden="false"
+      aria-label="Example home icon"
+      class="text-2xl cursor-pointer ml-2.5 absolute bottom-2"
+      fontIcon="menu"
+    ></mat-icon>
+  </div>
+
 </aside>
 <!-- End Sidebar-->
 
@@ -66,15 +103,15 @@
 <footer class="footer" id="footer">
   <div class="copyright">
     &copy; Copyright <strong><span>Kanija</span></strong
-    >. All Rights Reserved
+  >. All Rights Reserved
   </div>
   <div class="credits">
     Designed by
     <a
-      target="_blank"
-      rel="noopener noreferrer"
       href="https://www.facebook.com/chunghokage"
-      >Chung Kelvin</a
+      rel="noopener noreferrer"
+      target="_blank"
+    >Chung Kelvin</a
     >
   </div>
 </footer>

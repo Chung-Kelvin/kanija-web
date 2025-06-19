@@ -27,8 +27,6 @@
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
   padding-left: 20px;
-  /* Toggle Sidebar Button */
-  /* Search Bar */
 }
 
 .header .toggle-sidebar-btn {
@@ -248,15 +246,20 @@
   top: 60px;
   left: 0;
   bottom: 0;
-  width: 300px;
   z-index: 996;
-  transition: all 0.3s;
-  padding: 20px;
-  overflow-y: auto;
+  transition: all 0.3s ease;
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
+
+  &__expend {
+    width: 16rem;
+  }
+
+  &__unexpend {
+    width: 4rem;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -305,6 +308,7 @@
   padding: 0;
   margin: 0;
   list-style: none;
+
 }
 
 .sidebar-nav li {
@@ -314,7 +318,7 @@
 }
 
 .sidebar-nav .nav-item {
-  margin-bottom: 5px;
+  position: relative
 }
 
 .sidebar-nav .nav-heading {
@@ -329,18 +333,13 @@
   display: flex;
   align-items: center;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 400;
   color: #4154f1;
   transition: 0.3;
   background: #f6f9ff;
-  padding: 10px 15px;
+  padding: 10px 16px;
   border-radius: 4px;
-}
-
-.sidebar-nav .nav-link i {
-  font-size: 16px;
-  margin-right: 10px;
-  color: #4154f1;
+  position: relative;
 }
 
 .sidebar-nav .nav-link.collapsed {
@@ -348,17 +347,9 @@
   background: #fff;
 }
 
-.sidebar-nav .nav-link.collapsed i {
-  color: #899bbd;
-}
-
 .sidebar-nav .nav-link:hover {
   color: #4154f1;
   background: #f6f9ff;
-}
-
-.sidebar-nav .nav-link:hover i {
-  color: #4154f1;
 }
 
 .sidebar-nav .nav-link .bi-chevron-down {
@@ -401,4 +392,16 @@
 
 .sidebar-nav .nav-content a.active i {
   background-color: #4154f1;
+}
+
+.submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  min-width: 180px;
+  display: block;
+  z-index: 1000;
+  padding: 0;
 }

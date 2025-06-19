@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { MENU_CONFIG_ADMIN } from '../models/menu.model';
+import {Component} from '@angular/core';
+import {IMenuItem, MENU_CONFIG_ADMIN} from '../models/menu.model';
+
 
 @Component({
   selector: 'kan-layout-admin',
@@ -8,4 +9,12 @@ import { MENU_CONFIG_ADMIN } from '../models/menu.model';
 })
 export class LayoutAdminComponent {
   readonly menuItems = MENU_CONFIG_ADMIN;
+  public isCollapsed = true;
+
+  toggle(item: IMenuItem, event: MouseEvent) {
+    if (item.children) {
+      item.expanded = !item.expanded;
+      event.stopPropagation();
+    }
+  }
 }
