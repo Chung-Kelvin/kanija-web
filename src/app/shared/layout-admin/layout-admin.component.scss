@@ -36,7 +36,6 @@
 
 .header .search-bar {
   min-width: 360px;
-  padding: 0 20px;
 }
 
 @media (max-width: 1199px) {
@@ -319,6 +318,7 @@
   position: relative
 }
 
+
 .sidebar-nav .nav-heading {
   font-size: 11px;
   text-transform: uppercase;
@@ -347,16 +347,8 @@
 
 .sidebar-nav .nav-link:hover {
   color: #4154f1;
-  background: #f6f9ff;
-}
-
-.sidebar-nav .nav-link .bi-chevron-down {
-  margin-right: 0;
-  transition: transform 0.2s ease-in-out;
-}
-
-.sidebar-nav .nav-link:not(.collapsed) .bi-chevron-down {
-  transform: rotate(180deg);
+  background: red;
+  border-radius: 8px;
 }
 
 .sidebar-nav .nav-content {

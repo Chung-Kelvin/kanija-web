@@ -44,7 +44,7 @@ export const MENU_CONFIG_ADMIN: IMenuItem[] = [
     icon: 'home',
     label: 'Trang chủ',
     route: '/home',
-    firstLevel: true
+    firstLevel: true,
   },
   {
     icon: 'person',
@@ -58,14 +58,14 @@ export const MENU_CONFIG_ADMIN: IMenuItem[] = [
           {
             icon: 'groups',
             label: 'iPhone',
-            route: '/products/iphone'
+            route: '/products/iphone',
           },
           {
             icon: 'group',
             label: 'Samsung',
-            route: '/products/samsung'
-          }
-        ]
+            route: '/products/samsung',
+          },
+        ],
       },
       {
         icon: 'group',
@@ -74,21 +74,255 @@ export const MENU_CONFIG_ADMIN: IMenuItem[] = [
           {
             icon: 'group',
             label: 'MacBook',
-            route: '/products/macbook'
+            route: '/products/macbook',
           },
           {
             icon: 'group',
             label: 'Dell',
-            route: '/products/dell'
-          }
-        ]
-      }
-    ]
+            route: '/products/dell',
+          },
+        ],
+      },
+    ],
   },
   {
-    icon: 'home',
-    label: 'Trang chủ',
+    icon: 'mood',
+    label: 'Face',
     route: '/home',
-    firstLevel: true
+    firstLevel: true,
+  },
+  {
+    icon: 'rainy',
+    label: 'Thời tiết',
+    firstLevel: true,
+    children: [
+      {
+        icon: 'face',
+        label: 'Điện thoại',
+        children: [
+          {
+            icon: 'groups',
+            label: 'iPhone',
+            route: '/products/iphone',
+          },
+          {
+            icon: 'group',
+            label: 'Samsung',
+            route: '/products/samsung',
+          },
+        ],
+      },
+      {
+        icon: 'group',
+        label: 'Laptop',
+        children: [
+          {
+            icon: 'group',
+            label: 'MacBook',
+            route: '/products/macbook',
+          },
+          {
+            icon: 'group',
+            label: 'Dell',
+            route: '/products/dell',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    icon: 'person',
+    label: 'Sản phẩm',
+    firstLevel: true,
+    children: [
+      {
+        icon: 'face',
+        label: 'Điện thoại',
+        children: [
+          {
+            icon: 'groups',
+            label: 'iPhone',
+            route: '/products/iphone',
+          },
+          {
+            icon: 'group',
+            label: 'Samsung',
+            route: '/products/samsung',
+          },
+        ],
+      },
+      {
+        icon: 'group',
+        label: 'Laptop',
+        children: [
+          {
+            icon: 'group',
+            label: 'MacBook',
+            route: '/products/macbook',
+          },
+          {
+            icon: 'group',
+            label: 'Dell',
+            route: '/products/dell',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    icon: 'person',
+    label: 'Sản phẩm',
+    firstLevel: true,
+    children: [
+      {
+        icon: 'face',
+        label: 'Điện thoại',
+        children: [
+          {
+            icon: 'groups',
+            label: 'iPhone',
+            route: '/products/iphone',
+          },
+          {
+            icon: 'group',
+            label: 'Samsung',
+            route: '/products/samsung',
+          },
+        ],
+      },
+      {
+        icon: 'group',
+        label: 'Laptop',
+        children: [
+          {
+            icon: 'group',
+            label: 'MacBook',
+            route: '/products/macbook',
+          },
+          {
+            icon: 'group',
+            label: 'Dell',
+            route: '/products/dell',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    icon: 'person',
+    label: 'Sản phẩm',
+    firstLevel: true,
+    children: [
+      {
+        icon: 'face',
+        label: 'Điện thoại',
+        children: [
+          {
+            icon: 'groups',
+            label: 'iPhone',
+            route: '/products/iphone',
+          },
+          {
+            icon: 'group',
+            label: 'Samsung',
+            route: '/products/samsung',
+          },
+        ],
+      },
+      {
+        icon: 'group',
+        label: 'Laptop',
+        children: [
+          {
+            icon: 'group',
+            label: 'MacBook',
+            route: '/products/macbook',
+          },
+          {
+            icon: 'group',
+            label: 'Dell',
+            route: '/products/dell',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    icon: 'woman_2',
+    label: 'Sản phẩm',
+    firstLevel: true,
+    children: [
+      {
+        icon: 'face',
+        label: 'Điện thoại',
+        children: [
+          {
+            icon: 'groups',
+            label: 'iPhone',
+            route: '/products/iphone',
+          },
+          {
+            icon: 'group',
+            label: 'Samsung',
+            route: '/products/samsung',
+          },
+        ],
+      },
+      {
+        icon: 'group',
+        label: 'Laptop',
+        children: [
+          {
+            icon: 'group',
+            label: 'MacBook',
+            route: '/products/macbook',
+          },
+          {
+            icon: 'group',
+            label: 'Dell',
+            route: '/products/dell',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    icon: 'elderly',
+    label: 'Sản phẩm',
+    firstLevel: true,
+    children: [
+      {
+        icon: 'face',
+        label: 'Điện thoại',
+        children: [
+          {
+            icon: 'groups',
+            label: 'iPhone',
+            route: '/products/iphone',
+          },
+          {
+            icon: 'group',
+            label: 'Samsung',
+            route: '/products/samsung',
+          },
+        ],
+      },
+      {
+        icon: 'group',
+        label: 'Laptop',
+        children: [
+          {
+            icon: 'group',
+            label: 'MacBook',
+            route: '/products/macbook',
+          },
+          {
+            icon: 'group',
+            label: 'Dell',
+            route: '/products/dell',
+          },
+        ],
+      },
+    ],
   },
 ];
