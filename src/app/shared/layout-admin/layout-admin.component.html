@@ -3,12 +3,32 @@
   class="header fixed top-0 left-0 w-full z-50 flex items-center"
   id="header"
 >
-  <div class="flex items-center justify-between">
-    <a class="logo flex items-center" href="index.html">
-      <img alt="" src="assets/img/logo/logo.png"/>
-      <span class="hidden lg:block">Kanija</span>
-    </a>
-
+  <div class="flex items-center justify-between bg-red-400 py-4">
+    <div
+      class="transition-all duration-300"
+      [ngClass]="{ 'w-64': isCollapsed, 'w-16': !isCollapsed }"
+    >
+      <a class="logo flex" href="index.html">
+        <img class="pl-5 pr-2" alt="" src="assets/img/logo/logo.png" />
+        <span
+          [ngClass]="{
+            'visible opacity-100': isCollapsed,
+            'invisible opacity-0': !isCollapsed,
+          }"
+          >Kanija</span
+        >
+      </a>
+    </div>
+  </div>
+  <div class="w-full transition-all duration-300 px-4">
+    <mat-icon
+      (click)="isCollapsed = !isCollapsed"
+      [class.flip-x]="isCollapsed"
+      aria-hidden="false"
+      aria-label="Expand icon"
+      class="text-2xl cursor-pointer nav-link"
+      fontIcon="output"
+    ></mat-icon>
   </div>
 
   <div class="search-bar">
@@ -33,19 +53,30 @@
 <!-- End Header-->
 
 <!--Sidebar-->
-<aside [ngClass]="{ 'sidebar__expend': isCollapsed, 'sidebar__unexpend': !isCollapsed }" class="sidebar" id="sidebar">
+<aside
+  [ngClass]="{ sidebar__expend: isCollapsed, sidebar__unexpend: !isCollapsed }"
+  class="sidebar"
+  id="sidebar"
+>
   <ul class="sidebar-nav" id="sidebar-nav">
     <ng-container *ngFor="let item of menuItems">
-      <ng-container *ngTemplateOutlet="renderItem,context:{$implicit:item}"></ng-container>
+      <ng-container
+        *ngTemplateOutlet="renderItem; context: { $implicit: item }"
+      ></ng-container>
     </ng-container>
 
     <ng-template #renderItem let-item>
-      <li (click)="toggle(item, $event)"
-          (mouseenter)="item.hover = true"
-          (mouseleave)="item.hover = false"
-          class="nav-item"
+      <li
+        (click)="toggle(item, $event)"
+        (mouseenter)="item.hover = true"
+        (mouseleave)="item.hover = false"
+        class="nav-item"
       >
-        <a *ngIf="item.route; else noRoute" [routerLink]="item.route" class="nav-link">
+        <a
+          *ngIf="item.route; else noRoute"
+          [routerLink]="item.route"
+          class="nav-link px-5 py-3"
+        >
           <ng-container *ngIf="item.firstLevel">
             <mat-icon
               aria-hidden="false"
@@ -54,23 +85,23 @@
               fontIcon="{{ item.icon }}"
             ></mat-icon>
           </ng-container>
-          <span
-            *ngIf="isCollapsed||!item.firstLevel"
-            class="pl-4">{{ item.label }}</span>
+          <span *ngIf="isCollapsed || !item.firstLevel" class="pl-4">{{
+            item.label
+          }}</span>
         </a>
         <ng-template #noRoute>
-          <span class="nav-link">
-           <ng-container *ngIf="item.firstLevel">
+          <span class="nav-link px-5 py-3">
+            <ng-container *ngIf="item.firstLevel">
               <mat-icon
                 aria-hidden="false"
                 aria-label="Example home icon"
-                class="text-3xl cursor-pointer"
+                class="text-2xl cursor-pointer"
                 fontIcon="{{ item.icon }}"
               ></mat-icon>
-           </ng-container>
-            <span
-              *ngIf="isCollapsed||!item.firstLevel"
-              class="pl-4">{{ item.label }}</span>
+            </ng-container>
+            <span *ngIf="isCollapsed || !item.firstLevel" class="pl-4">{{
+              item.label
+            }}</span>
           </span>
         </ng-template>
         <!--
@@ -78,25 +109,17 @@
         -->
         <ul
           *ngIf="item.children && (item.hover || item.expanded)"
-          class="submenu">
+          class="submenu"
+        >
           <ng-container *ngFor="let child of item.children">
-            <ng-container *ngTemplateOutlet="renderItem; context: { $implicit: child }"></ng-container>
+            <ng-container
+              *ngTemplateOutlet="renderItem; context: { $implicit: child }"
+            ></ng-container>
           </ng-container>
         </ul>
       </li>
     </ng-template>
   </ul>
-  <div class="nav-link flex items-center w-full">
-    <mat-icon
-      (click)="isCollapsed=!isCollapsed"
-      [class.flip-x]="isCollapsed"
-      aria-hidden="false"
-      aria-label="Example home icon"
-      class="text-2xl cursor-pointer ml-2.5 absolute bottom-2 transition-all duration-300"
-      fontIcon="output"
-    ></mat-icon>
-  </div>
-
 </aside>
 <!-- End Sidebar-->
 
@@ -104,7 +127,7 @@
 <footer class="footer" id="footer">
   <div class="copyright">
     &copy; Copyright <strong><span>Kanija</span></strong
-  >. All Rights Reserved
+    >. All Rights Reserved
   </div>
   <div class="credits">
     Designed by
@@ -112,7 +135,7 @@
       href="https://www.facebook.com/chunghokage"
       rel="noopener noreferrer"
       target="_blank"
-    >Chung Kelvin</a
+      >Chung Kelvin</a
     >
   </div>
 </footer>

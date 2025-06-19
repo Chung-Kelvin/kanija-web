@@ -3,9 +3,7 @@
 }
 
 @media (min-width: 1200px) {
-  .logo {
-    width: 280px;
-  }
+
 }
 
 .logo img {
@@ -23,10 +21,10 @@
 .header {
   transition: all 0.5s;
   z-index: 997;
-  height: 60px;
+
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
-  padding-left: 20px;
+ 
 }
 
 .header .toggle-sidebar-btn {
@@ -337,7 +335,7 @@
   color: #4154f1;
   transition: 0.3;
   background: #f6f9ff;
-  padding: 10px 16px;
+  //padding: 10px 16px;
   border-radius: 4px;
   position: relative;
 }
@@ -385,22 +383,13 @@
   border-radius: 50%;
 }
 
-.sidebar-nav .nav-content a:hover,
-.sidebar-nav .nav-content a.active {
-  color: #4154f1;
-}
-
-.sidebar-nav .nav-content a.active i {
-  background-color: #4154f1;
-}
-
 .submenu {
   position: absolute;
   top: 0;
   left: 100%;
   background: #fff;
   border: 1px solid #ddd;
-  min-width: 180px;
+  min-width: 10rem;
   display: block;
   z-index: 1000;
   padding: 0;

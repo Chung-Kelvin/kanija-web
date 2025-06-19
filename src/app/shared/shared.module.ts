@@ -6,6 +6,10 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatIconModule} from "@angular/material/icon";
 import {ComponentModule} from "./component/component.module";
 import {LayoutAdminComponent} from "./layout-admin/layout-admin.component";
+import {NzBreadCrumbModule} from "ng-zorro-antd/breadcrumb";
+import {NzIconModule} from "ng-zorro-antd/icon";
+import {NzMenuModule} from "ng-zorro-antd/menu";
+import {NzLayoutModule} from "ng-zorro-antd/layout";
 
 
 @NgModule({
@@ -13,7 +17,7 @@ import {LayoutAdminComponent} from "./layout-admin/layout-admin.component";
     LayoutComponent, LayoutAdminComponent
   ],
   imports: [
-    CommonModule, RouterModule, MatMenuModule, MatIconModule, ComponentModule
+    CommonModule, RouterModule, MatMenuModule, MatIconModule, ComponentModule, NzBreadCrumbModule, NzIconModule, NzMenuModule, NzLayoutModule, NzIconModule
   ],
   exports: [LayoutComponent, LayoutAdminComponent]
 })
