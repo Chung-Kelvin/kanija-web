@@ -42,12 +42,15 @@
           type="text"
         />
         <button title="Search" type="submit">
-          <mat-icon
+
+
+          <span
             aria-hidden="false"
-            aria-label="icon search"
+            aria-label="Expand icon"
             class="text-2xl cursor-pointer ml-2"
-            fontIcon="search"
-          ></mat-icon>
+          >
+        search
+           </span>
         </button>
       </div>
     </div>
@@ -99,12 +102,14 @@
           class="nav-link px-5 py-3"
         >
           <ng-container *ngIf="item.firstLevel">
-            <mat-icon
+            <span
               aria-hidden="false"
-              aria-label="icon menu item"
+              aria-label="Expand icon"
               class="text-2xl cursor-pointer"
-              fontIcon="{{ item.icon }}"
-            ></mat-icon>
+            >
+        {{ item.icon }}
+           </span>
+
           </ng-container>
           <span *ngIf="isCollapsed || !item.firstLevel" class="pl-4">{{
               item.label
@@ -113,12 +118,13 @@
         <ng-template #noRoute>
           <span class="nav-link px-5 py-3">
             <ng-container *ngIf="item.firstLevel">
-              <mat-icon
-                aria-hidden="false"
-                aria-label="Example home icon"
-                class="text-2xl cursor-pointer"
-                fontIcon="{{ item.icon }}"
-              ></mat-icon>
+             <span
+               aria-hidden="false"
+               aria-label="Expand icon"
+               class="text-2xl cursor-pointer"
+             >
+        {{ item.icon }}
+           </span>
             </ng-container>
             <span *ngIf="isCollapsed || !item.firstLevel" class="pl-4">{{
                 item.label

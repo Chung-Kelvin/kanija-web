@@ -79,7 +79,7 @@
         <span class="text-xs font-montserrat mt-1">Cửa hàng</span>
       </div>
 
-      <div #afterMenu [matMenuTriggerFor]="menu"
+      <div #afterMenu
            class="flex flex-col items-center justify-center flex-1 cursor-pointer">
         <svg
           class="size-7"
@@ -98,21 +98,21 @@
         <span class="text-xs font-montserrat mt-1">Menu</span>
 
       </div>
-      <mat-menu #menu="matMenu">
-        <ng-template matMenuContent>
-          <div class="p-4 w-64">
-            <h4 class="font-bold text-lg mb-2">Danh mục</h4>
-            <ul>
-              <li class="py-1 hover:text-blue-500">
-                <mat-icon>home</mat-icon>
-                Áo thun
-              </li>
-              <li class="py-1 hover:text-blue-500">Áo khoác</li>
-              <li class="py-1 hover:text-blue-500">Phụ kiện</li>
-            </ul>
-          </div>
-        </ng-template>
-      </mat-menu>
+      <!--      <mat-menu #menu="matMenu">-->
+      <!--        <ng-template matMenuContent>-->
+      <!--          <div class="p-4 w-64">-->
+      <!--            <h4 class="font-bold text-lg mb-2">Danh mục</h4>-->
+      <!--            <ul>-->
+      <!--              <li class="py-1 hover:text-blue-500">-->
+      <!--                <mat-icon>home</mat-icon>-->
+      <!--                Áo thun-->
+      <!--              </li>-->
+      <!--              <li class="py-1 hover:text-blue-500">Áo khoác</li>-->
+      <!--              <li class="py-1 hover:text-blue-500">Phụ kiện</li>-->
+      <!--            </ul>-->
+      <!--          </div>-->
+      <!--        </ng-template>-->
+      <!--      </mat-menu>-->
 
 
     </div>
