@@ -1,9 +1,11 @@
-<nz-input-group nzAddOnAfter=".com" nzAddOnBefore="Http://">
-  <input nz-input type="text"/>
+<nz-input-group [nzCompact]="true">
+  <input
+    nz-input
+    type="type"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    [(ngModel)]="value"
+    (ngModelChange)="onInputChange($event)"
+    (blur)="onTouched()"
+  />
 </nz-input-group>
-
-
-
-
-
-

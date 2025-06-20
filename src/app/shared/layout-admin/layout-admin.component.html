@@ -9,13 +9,13 @@
       class="transition-all duration-300"
     >
       <a class="logo flex" href="index.html">
-        <img alt="" class="pl-5 pr-2" src="assets/img/logo/logo.png"/>
+        <img alt="" class="pl-5 pr-2" src="assets/img/logo/logo.png" />
         <span
           [ngClass]="{
             'visible opacity-100': isCollapsed,
             'invisible opacity-0': !isCollapsed,
           }"
-        >Kanija</span
+          >Kanija</span
         >
       </a>
     </div>
@@ -42,15 +42,13 @@
           type="text"
         />
         <button title="Search" type="submit">
-
-
           <span
             aria-hidden="false"
             aria-label="Expand icon"
-            class="text-2xl cursor-pointer ml-2"
+            class="material-symbols-outlined text-2xl cursor-pointer ml-2"
           >
-        search
-           </span>
+            search
+          </span>
         </button>
       </div>
     </div>
@@ -105,30 +103,29 @@
             <span
               aria-hidden="false"
               aria-label="Expand icon"
-              class="text-2xl cursor-pointer"
+              class="material-symbols-outlined text-2xl cursor-pointer"
             >
-        {{ item.icon }}
-           </span>
-
+              {{ item.icon }}
+            </span>
           </ng-container>
           <span *ngIf="isCollapsed || !item.firstLevel" class="pl-4">{{
-              item.label
-            }}</span>
+            item.label
+          }}</span>
         </a>
         <ng-template #noRoute>
           <span class="nav-link px-5 py-3">
             <ng-container *ngIf="item.firstLevel">
-             <span
-               aria-hidden="false"
-               aria-label="Expand icon"
-               class="text-2xl cursor-pointer"
-             >
-        {{ item.icon }}
-           </span>
+              <span
+                aria-hidden="false"
+                aria-label="Expand icon"
+                class="material-symbols-outlined text-2xl cursor-pointer"
+              >
+                {{ item.icon }}
+              </span>
             </ng-container>
             <span *ngIf="isCollapsed || !item.firstLevel" class="pl-4">{{
-                item.label
-              }}</span>
+              item.label
+            }}</span>
           </span>
         </ng-template>
 
@@ -152,7 +149,6 @@
 <main
   [ngClass]="{ expend: !isCollapsed, unexpend: isCollapsed }"
   class="main-content"
-  id="main"
 >
   <ng-content></ng-content>
 </main>
@@ -165,7 +161,7 @@
 >
   <div class="copyright">
     &copy; Copyright <strong><span>Kanija</span></strong
-  >. All Rights Reserved
+    >. All Rights Reserved
   </div>
   <div class="credits">
     Designed by
@@ -173,7 +169,7 @@
       href="https://www.facebook.com/chunghokage"
       rel="noopener noreferrer"
       target="_blank"
-    >Chung Kelvin</a
+      >Chung Kelvin</a
     >
   </div>
 </footer>

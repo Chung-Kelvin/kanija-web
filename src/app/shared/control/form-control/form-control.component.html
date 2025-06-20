@@ -1,0 +1,9 @@
+<nz-form-item class="mb-0">
+  <nz-form-control [nzErrorTip]="errorTip">
+    <ng-content></ng-content
+  ></nz-form-control>
+</nz-form-item>
+
+<ng-template #errorTip let-control>
+  <span class="text-xs">{{ control?.error?.message }}</span></ng-template
+>
