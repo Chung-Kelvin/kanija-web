@@ -20,16 +20,17 @@
       </a>
     </div>
   </div>
-  <div class="flex">
-    <div class="w-full transition-all duration-300 px-4">
-      <mat-icon
+  <div class="flex w-full">
+    <div class="transition-all duration-300 px-4">
+      <span
         (click)="isCollapsed = !isCollapsed"
         [class.flip-x]="isCollapsed"
         aria-hidden="false"
         aria-label="Expand icon"
-        class="text-2xl cursor-pointer nav-link"
-        fontIcon="output"
-      ></mat-icon>
+        class="material-symbols-outlined text-2xl cursor-pointer nav-link"
+      >
+        right_panel_open
+      </span>
     </div>
 
     <div class="search-bar">
@@ -125,9 +126,7 @@
             }}</span>
           </span>
         </ng-template>
-        <!--
-           [ngClass]="{ 'invisible w-0': !(isCollapsed||!item.firstLevel), 'visible w-auto': isCollapsed||!item.firstLevel }"
-        -->
+
         <ul
           *ngIf="item.children && (item.hover || item.expanded)"
           class="submenu"
@@ -144,8 +143,21 @@
 </aside>
 <!-- End Sidebar-->
 
+<!--Main content-->
+<main
+  id="main"
+  class="main-content"
+  [ngClass]="{ expend: !isCollapsed, unexpend: isCollapsed }"
+>
+  <ng-content></ng-content>
+</main>
+<!-- End Main content-->
 <!--Footer-->
-<footer class="footer" id="footer">
+<footer
+  class="footer"
+  [ngClass]="{ expend: !isCollapsed, unexpend: isCollapsed }"
+  id="footer"
+>
   <div class="copyright">
     &copy; Copyright <strong><span>Kanija</span></strong
     >. All Rights Reserved

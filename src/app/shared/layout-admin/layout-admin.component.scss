@@ -277,9 +277,16 @@
 
 @media (min-width: 1200px) {
 
-  #main,
+  .main-content,
   #footer {
-    margin-left: 300px;
+   transition: all 0.3s ease;
+      &.unexpend {
+    margin-left: 16rem;
+  }
+
+  &.expend {
+    margin-left: 4rem;
+  }
   }
 }
 
@@ -389,4 +396,10 @@
 
 .flip-x {
   transform: scaleX(-1);
+}
+
+.main-content {
+  margin-top: 60px;
+  padding: 20px 30px;
+  transition: all 0.3s;
 }
