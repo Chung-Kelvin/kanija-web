@@ -13,7 +13,9 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { ControlModule } from './control/control.module';
 
 @NgModule({
-  declarations: [LayoutComponent, LayoutAdminComponent],
+  declarations: [
+    LayoutComponent, LayoutAdminComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
