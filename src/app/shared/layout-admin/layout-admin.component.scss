@@ -24,7 +24,7 @@
 
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
- 
+
 }
 
 .header .toggle-sidebar-btn {
@@ -279,34 +279,18 @@
 
   .main-content,
   #footer {
-   transition: all 0.3s ease;
-      &.unexpend {
-    margin-left: 16rem;
-  }
+    transition: all 0.3s ease;
 
-  &.expend {
-    margin-left: 4rem;
-  }
+    &.unexpend {
+      margin-left: 16rem;
+    }
+
+    &.expend {
+      margin-left: 4rem;
+    }
   }
 }
 
-@media (max-width: 1199px) {
-  .toggle-sidebar .sidebar {
-    left: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-
-  .toggle-sidebar #main,
-  .toggle-sidebar #footer {
-    margin-left: 0;
-  }
-
-  .toggle-sidebar .sidebar {
-    left: -300px;
-  }
-}
 
 .sidebar-nav {
   padding: 0;

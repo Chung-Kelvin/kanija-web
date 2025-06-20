@@ -5,17 +5,17 @@
 >
   <div class="flex items-center justify-between bg-red-400 py-4">
     <div
-      class="transition-all duration-300"
       [ngClass]="{ 'w-64': isCollapsed, 'w-16': !isCollapsed }"
+      class="transition-all duration-300"
     >
       <a class="logo flex" href="index.html">
-        <img class="pl-5 pr-2" alt="" src="assets/img/logo/logo.png" />
+        <img alt="" class="pl-5 pr-2" src="assets/img/logo/logo.png"/>
         <span
           [ngClass]="{
             'visible opacity-100': isCollapsed,
             'invisible opacity-0': !isCollapsed,
           }"
-          >Kanija</span
+        >Kanija</span
         >
       </a>
     </div>
@@ -56,15 +56,14 @@
         <li class="nav-item dropdown pe-3">
           <a
             class="nav-link nav-profile flex items-center pe-0"
-            href="#"
             data-bs-toggle="dropdown"
+            href="#"
           >
             <img
-              src="assets/img/avt/avt1.jpg"
               alt="Profile"
               class="rounded-full"
+              src="assets/img/avt/avt1.jpg"
             />
-
             <span class="d-none d-md-block dropdown-toggle ps-2">T.Link</span>
           </a>
         </li>
@@ -108,8 +107,8 @@
             ></mat-icon>
           </ng-container>
           <span *ngIf="isCollapsed || !item.firstLevel" class="pl-4">{{
-            item.label
-          }}</span>
+              item.label
+            }}</span>
         </a>
         <ng-template #noRoute>
           <span class="nav-link px-5 py-3">
@@ -122,8 +121,8 @@
               ></mat-icon>
             </ng-container>
             <span *ngIf="isCollapsed || !item.firstLevel" class="pl-4">{{
-              item.label
-            }}</span>
+                item.label
+              }}</span>
           </span>
         </ng-template>
 
@@ -145,22 +144,22 @@
 
 <!--Main content-->
 <main
-  id="main"
-  class="main-content"
   [ngClass]="{ expend: !isCollapsed, unexpend: isCollapsed }"
+  class="main-content"
+  id="main"
 >
   <ng-content></ng-content>
 </main>
 <!-- End Main content-->
 <!--Footer-->
 <footer
-  class="footer"
   [ngClass]="{ expend: !isCollapsed, unexpend: isCollapsed }"
+  class="footer"
   id="footer"
 >
   <div class="copyright">
     &copy; Copyright <strong><span>Kanija</span></strong
-    >. All Rights Reserved
+  >. All Rights Reserved
   </div>
   <div class="credits">
     Designed by
@@ -168,7 +167,7 @@
       href="https://www.facebook.com/chunghokage"
       rel="noopener noreferrer"
       target="_blank"
-      >Chung Kelvin</a
+    >Chung Kelvin</a
     >
   </div>
 </footer>
