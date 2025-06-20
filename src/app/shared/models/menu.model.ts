@@ -41,9 +41,9 @@ export const MENU_CONFIG: IMenuItem[] = [
 
 export const MENU_CONFIG_ADMIN: IMenuItem[] = [
   {
-    icon: 'home',
-    label: 'Trang chủ',
-    route: '/home',
+    icon: 'category',
+    label: 'Category',
+    route: '/admin/category',
     firstLevel: true,
   },
   {

@@ -8,14 +8,14 @@
       [ngClass]="{ 'w-64': isCollapsed, 'w-16': !isCollapsed }"
       class="transition-all duration-300"
     >
-      <a class="logo flex" href="index.html">
-        <img alt="" class="pl-5 pr-2" src="assets/img/logo/logo.png" />
+      <a class="logo flex" href="index.html" routerLink="/admin/dashboard">
+        <img alt="" class="pl-5 pr-2" src="assets/img/logo/logo.png"/>
         <span
           [ngClass]="{
             'visible opacity-100': isCollapsed,
             'invisible opacity-0': !isCollapsed,
           }"
-          >Kanija</span
+        >Kanija</span
         >
       </a>
     </div>
@@ -109,8 +109,8 @@
             </span>
           </ng-container>
           <span *ngIf="isCollapsed || !item.firstLevel" class="pl-4">{{
-            item.label
-          }}</span>
+              item.label
+            }}</span>
         </a>
         <ng-template #noRoute>
           <span class="nav-link px-5 py-3">
@@ -124,8 +124,8 @@
               </span>
             </ng-container>
             <span *ngIf="isCollapsed || !item.firstLevel" class="pl-4">{{
-              item.label
-            }}</span>
+                item.label
+              }}</span>
           </span>
         </ng-template>
 
@@ -150,7 +150,7 @@
   [ngClass]="{ expend: !isCollapsed, unexpend: isCollapsed }"
   class="main-content"
 >
-  <ng-content></ng-content>
+  <router-outlet></router-outlet>
 </main>
 <!-- End Main content-->
 <!--Footer-->
@@ -161,7 +161,7 @@
 >
   <div class="copyright">
     &copy; Copyright <strong><span>Kanija</span></strong
-    >. All Rights Reserved
+  >. All Rights Reserved
   </div>
   <div class="credits">
     Designed by
@@ -169,8 +169,9 @@
       href="https://www.facebook.com/chunghokage"
       rel="noopener noreferrer"
       target="_blank"
-      >Chung Kelvin</a
+    >Chung Kelvin</a
     >
   </div>
 </footer>
 <!-- End Footer -->
+
