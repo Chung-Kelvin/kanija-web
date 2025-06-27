@@ -1,11 +1,29 @@
-<nz-input-group [nzCompact]="true">
+<nz-input-group [nzCompact]="true" [nzSuffix]="suffix">
   <input
+    (blur)="onTouched()"
+    (ngModelChange)="onInputChange($event)"
+    [(ngModel)]="value"
+    [disabled]="disabled"
+    [placeholder]="placeholder"
     nz-input
     type="type"
-    [placeholder]="placeholder"
-    [disabled]="disabled"
-    [(ngModel)]="value"
-    (ngModelChange)="onInputChange($event)"
-    (blur)="onTouched()"
   />
 </nz-input-group>
+<ng-template #suffix>
+  <span
+    aria-hidden="false"
+    aria-label="Expand icon"
+    class="material-symbols-outlined text-xl cursor-pointer ml-2"
+  >
+            {{ suffixIcon }}
+          </span>
+</ng-template>
+<ng-template #prefix>
+    <span
+      aria-hidden="false"
+      aria-label="Expand icon"
+      class="material-symbols-outlined text-xl cursor-pointer ml-2"
+    >
+            {{ prefixIcon }}
+          </span>
+</ng-template>

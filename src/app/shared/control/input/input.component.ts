@@ -1,5 +1,6 @@
-import { Component, forwardRef, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {Component, forwardRef, Input} from '@angular/core';
+import {NG_VALUE_ACCESSOR} from '@angular/forms';
+
 @Component({
   selector: 'kan-input',
   templateUrl: './input.component.html',
@@ -17,6 +18,8 @@ export class InputComponent {
   @Input() disabled: boolean = false;
   @Input() clearable: boolean = false;
   @Input() type: 'text' | 'number' = 'text';
+  @Input() suffixIcon: string = '';
+  @Input() prefixIcon: string = '';
 
   value: string = '';
 
@@ -26,8 +29,10 @@ export class InputComponent {
     this.onTouched();
   }
 
-  onChange = (value: any) => {};
-  onTouched = () => {};
+  onChange = (value: any) => {
+  };
+  onTouched = () => {
+  };
 
   writeValue(value: string): void {
     this.value = value;
