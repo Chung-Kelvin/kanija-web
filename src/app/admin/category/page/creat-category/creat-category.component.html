@@ -1,1 +1,12 @@
-<kan-input [suffixIcon]="'search'"></kan-input>
+<form nz-form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <button nz-button nzType="primary" nzDanger>Primary</button>
+  <kan-form-control>
+    <label>Category name</label>
+    <kan-input formControlName="name"></kan-input>
+  </kan-form-control>
+
+  <kan-form-control>
+    <label>Description</label>
+    <kan-input formControlName="description"></kan-input>
+  </kan-form-control>
+</form>
