@@ -7,11 +7,10 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ControlModule } from './shared/control/control.module';
 
 registerLocaleData(en);
 
@@ -22,6 +21,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    ReactiveFormsModule,
+    ControlModule,
     BrowserModule,
     AppRoutingModule,
     SharedModule,
@@ -37,9 +38,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     FormsModule,
   ],
-  providers: [
-    { provide: NZ_I18N, useValue: en_US }
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

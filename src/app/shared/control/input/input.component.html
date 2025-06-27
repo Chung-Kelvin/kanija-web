@@ -1,0 +1,35 @@
+<nz-input-group
+  [nzCompact]="true"
+  [nzSuffix]="value && clearable ? suffix : undefined"
+  [nzSize]="size"
+  [nzPrefix]="prefix"
+>
+  <input
+    (blur)="onTouched()"
+    (ngModelChange)="onInputChange($event)"
+    [(ngModel)]="value"
+    [disabled]="disabled"
+    [placeholder]="placeholder"
+    nz-input
+    type="type"
+  />
+</nz-input-group>
+<ng-template #suffix>
+  <span
+    aria-hidden="false"
+    aria-label="Expand icon"
+    class="material-symbols-outlined text-xs cursor-pointer clear-icon"
+    (click)="clearInput()"
+  >
+    close_small
+  </span>
+</ng-template>
+<ng-template #prefix>
+  <span
+    aria-hidden="false"
+    aria-label="Expand icon"
+    class="material-symbols-outlined"
+  >
+    {{ prefixIcon }}
+  </span>
+</ng-template>

@@ -8,7 +8,7 @@
       [ngClass]="{ 'w-64': isCollapsed, 'w-16': !isCollapsed }"
       class="transition-all duration-300"
     >
-      <a class="logo flex" href="index.html">
+      <a class="logo flex" href="index.html" routerLink="/admin/dashboard">
         <img alt="" class="pl-5 pr-2" src="assets/img/logo/logo.png"/>
         <span
           [ngClass]="{
@@ -42,12 +42,13 @@
           type="text"
         />
         <button title="Search" type="submit">
-          <mat-icon
+          <span
             aria-hidden="false"
-            aria-label="icon search"
-            class="text-2xl cursor-pointer ml-2"
-            fontIcon="search"
-          ></mat-icon>
+            aria-label="Expand icon"
+            class="material-symbols-outlined text-2xl cursor-pointer ml-2"
+          >
+            search
+          </span>
         </button>
       </div>
     </div>
@@ -99,12 +100,13 @@
           class="nav-link px-5 py-3"
         >
           <ng-container *ngIf="item.firstLevel">
-            <mat-icon
+            <span
               aria-hidden="false"
-              aria-label="icon menu item"
-              class="text-2xl cursor-pointer"
-              fontIcon="{{ item.icon }}"
-            ></mat-icon>
+              aria-label="Expand icon"
+              class="material-symbols-outlined text-2xl cursor-pointer"
+            >
+              {{ item.icon }}
+            </span>
           </ng-container>
           <span *ngIf="isCollapsed || !item.firstLevel" class="pl-4">{{
               item.label
@@ -113,12 +115,13 @@
         <ng-template #noRoute>
           <span class="nav-link px-5 py-3">
             <ng-container *ngIf="item.firstLevel">
-              <mat-icon
+              <span
                 aria-hidden="false"
-                aria-label="Example home icon"
-                class="text-2xl cursor-pointer"
-                fontIcon="{{ item.icon }}"
-              ></mat-icon>
+                aria-label="Expand icon"
+                class="material-symbols-outlined text-2xl cursor-pointer"
+              >
+                {{ item.icon }}
+              </span>
             </ng-container>
             <span *ngIf="isCollapsed || !item.firstLevel" class="pl-4">{{
                 item.label
@@ -146,9 +149,8 @@
 <main
   [ngClass]="{ expend: !isCollapsed, unexpend: isCollapsed }"
   class="main-content"
-  id="main"
 >
-  <ng-content></ng-content>
+  <router-outlet></router-outlet>
 </main>
 <!-- End Main content-->
 <!--Footer-->
@@ -172,3 +174,4 @@
   </div>
 </footer>
 <!-- End Footer -->
+
