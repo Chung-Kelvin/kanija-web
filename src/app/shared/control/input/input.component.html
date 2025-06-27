@@ -1,4 +1,9 @@
-<nz-input-group [nzCompact]="true" [nzSuffix]="suffix">
+<nz-input-group
+  [nzCompact]="true"
+  [nzSuffix]="value && clearable ? suffix : undefined"
+  [nzSize]="size"
+  [nzPrefix]="prefix"
+>
   <input
     (blur)="onTouched()"
     (ngModelChange)="onInputChange($event)"
@@ -13,17 +18,18 @@
   <span
     aria-hidden="false"
     aria-label="Expand icon"
-    class="material-symbols-outlined text-xl cursor-pointer ml-2"
+    class="material-symbols-outlined text-xs cursor-pointer clear-icon"
+    (click)="clearInput()"
   >
-            {{ suffixIcon }}
-          </span>
+    close_small
+  </span>
 </ng-template>
 <ng-template #prefix>
-    <span
-      aria-hidden="false"
-      aria-label="Expand icon"
-      class="material-symbols-outlined text-xl cursor-pointer ml-2"
-    >
-            {{ prefixIcon }}
-          </span>
+  <span
+    aria-hidden="false"
+    aria-label="Expand icon"
+    class="material-symbols-outlined"
+  >
+    {{ prefixIcon }}
+  </span>
 </ng-template>
