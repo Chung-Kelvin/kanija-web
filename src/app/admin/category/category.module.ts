@@ -8,6 +8,10 @@ import { categoryReducer } from './state/category.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { CategoryEffects } from './state/category.effect';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { ListCategoryComponent } from './page/list-category/list-category.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -17,14 +21,17 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CreatCategoryComponent],
+  declarations: [CreatCategoryComponent, ListCategoryComponent],
   imports: [
+    TranslateModule,
     CommonModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
     ControlModule,
     StoreModule.forFeature('category', categoryReducer),
     EffectsModule.forFeature([CategoryEffects]),
+    NzButtonModule,
+    NzFormModule,
   ],
 })
 export class CategoryModule {}

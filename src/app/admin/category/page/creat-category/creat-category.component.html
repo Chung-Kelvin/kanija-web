@@ -1,5 +1,4 @@
-<form nz-form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <button nz-button nzType="primary" nzDanger>Primary</button>
+<form (ngSubmit)="onSubmit()" [formGroup]="form" nz-form>
   <kan-form-control>
     <label>Category name</label>
     <kan-input formControlName="name"></kan-input>
@@ -9,4 +8,16 @@
     <label>Description</label>
     <kan-input formControlName="description"></kan-input>
   </kan-form-control>
+  <kan-form-control>
+    <label>Parent</label>
+    <kan-input formControlName="parentCategory"></kan-input>
+  </kan-form-control>
+
+  <button nz-button nzDanger nzType="primary">
+    {{ "button.save" | translate }}
+  </button>
 </form>
+
+<button (click)="show()" nz-button nzDanger nzType="primary">
+  Notification
+</button>

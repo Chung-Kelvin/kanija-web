@@ -1,4 +1,4 @@
-import { createAction, props } from '@ngrx/store';
+import {createAction, props} from '@ngrx/store';
 
 //action create new category
 export const createCategory = createAction(
@@ -10,6 +10,6 @@ export const createCategorySuccess = createAction(
   props<{ success: any }>(),
 );
 export const createCategoryFail = createAction(
-  '[UsCategoryer] Create category Fail',
+  '[Category] Create category Fail',
   props<{ error: any }>(),
 );
