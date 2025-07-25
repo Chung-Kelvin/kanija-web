@@ -29,6 +29,16 @@
     "ok": "OK",
     "yes": "Yes"
   },
+  "common": {
+  },
+  "table": {
+    "thead": {
+      "category_name": "Category name",
+      "description": "Description"
+    }
+  },
   "notification": {},
-  "error": {}
+  "error": {},
+  "category": {
+  }
 }

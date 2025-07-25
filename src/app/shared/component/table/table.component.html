@@ -1,0 +1,40 @@
+<nz-table
+  #basicTable
+  [nzData]="listOfData"
+  [nzSize]="'middle'"
+  class="product-table"
+>
+  <thead>
+    <tr>
+      <th *ngIf="showNumber" [nzAlign]="'center'" [nzWidth]="'56px'">No</th>
+      <th *ngFor="let config of tableConfig" [nzAlign]="config.align ?? null">
+        {{ config.header }}
+      </th>
+      <th *ngIf="showCheckbox" [nzShowCheckbox]="showCheckbox"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of listOfData; let i = index">
+      <td *ngIf="showNumber" [nzAlign]="'center'">{{ i + 1 }}</td>
+
+      <td *ngFor="let col of tableConfig">
+        {{ getValue(data, col.key) }}
+      </td>
+
+      <td [nzAlign]="'center'">
+        <button nz-button nz-tooltip="Edit" nzShape="circle" nzType="default">
+          <i nz-icon></i>
+        </button>
+        <button
+          class="delete-btn"
+          nz-button
+          nz-tooltip="Delete"
+          nzShape="circle"
+          nzType="default"
+        >
+          <i nz-icon nzType="delete"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

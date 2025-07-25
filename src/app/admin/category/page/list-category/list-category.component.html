@@ -1,1 +1,11 @@
-<p>list-category works!</p>
+<nz-breadcrumb>
+  <nz-breadcrumb-item>
+    <a [routerLink]="['/admin/category']">{{
+      "category.category" | translate
+    }}</a>
+  </nz-breadcrumb-item>
+  <nz-breadcrumb-item>{{ "category.create" | translate }}</nz-breadcrumb-item>
+</nz-breadcrumb>
+<div class="bg-slate-400 w-full p-4 rounded-lg containerr">
+  <kan-table></kan-table>
+</div>

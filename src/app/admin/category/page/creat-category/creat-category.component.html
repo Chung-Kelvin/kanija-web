@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="form" nz-form>
+<!-- <form (ngSubmit)="onSubmit()" [formGroup]="form" nz-form>
   <kan-form-control>
     <label>Category name</label>
     <kan-input formControlName="name"></kan-input>
@@ -16,8 +16,34 @@
   <button nz-button nzDanger nzType="primary">
     {{ "button.save" | translate }}
   </button>
-</form>
+</form> -->
+<nz-breadcrumb>
+  <nz-breadcrumb-item>
+    <a [routerLink]="['/admin/category']">{{
+      "category.category" | translate
+    }}</a>
+  </nz-breadcrumb-item>
+  <nz-breadcrumb-item>{{ "category.create" | translate }}</nz-breadcrumb-item>
+</nz-breadcrumb>
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form" nz-form>
+    <kan-form-control>
+      <label>{{ "category.name" | translate }}</label>
+      <kan-input formControlName="name"></kan-input>
+    </kan-form-control>
 
-<button (click)="show()" nz-button nzDanger nzType="primary">
-  Notification
-</button>
+    <kan-form-control>
+      <label>{{ "category.description" | translate }}</label>
+      <kan-input formControlName="description"></kan-input>
+    </kan-form-control>
+
+    <kan-form-control>
+      <label>{{ "category.parent" | translate }}</label>
+      <kan-input formControlName="parentCategory"></kan-input>
+    </kan-form-control>
+
+    <button nz-button nzDanger nzType="primary">
+      {{ "button.save" | translate }}
+    </button>
+  </form>
+</div>
