@@ -5,6 +5,7 @@
   "label": {},
   "placeholder": {},
   "button": {
+    "add_new": "Add new",
     "save": "Save",
     "cancel": "Cancel",
     "create": "Create",
@@ -26,10 +27,20 @@
     "apply": "Apply",
     "select": "Select",
     "clear": "Clear",
+    "copy": "Copy",
     "ok": "OK",
     "yes": "Yes"
   },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "processing": "Processing",
+    "completed": "Completed",
+    "failed": "Failed"
+  },
   "common": {
+    "selected_records": "Selected {{count}} records",
+    "selected_record": "Selected {{count}} record"
   },
   "table": {
     "thead": {
@@ -40,5 +51,8 @@
   "notification": {},
   "error": {},
   "category": {
+    "header": {
+      "categories_list": "Categories list ({{count}})"
+    }
   }
 }

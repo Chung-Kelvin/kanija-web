@@ -11,7 +11,10 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-
+import { AdminRoutingModule } from 'src/app/admin/admin-routing.module';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { TranslateModule } from '@ngx-translate/core';
+import { StatusStylePipe } from '../pipe/status.pipe';
 @NgModule({
   declarations: [
     CarouselComponent,
@@ -21,6 +24,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     AvatarComponent,
     AvatarGroupComponent,
     TableComponent,
+    StatusStylePipe,
   ],
   imports: [
     CommonModule,
@@ -28,6 +32,9 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     NzFormModule,
     NzTableModule,
     NzToolTipModule,
+    AdminRoutingModule,
+    NzIconModule,
+    TranslateModule,
   ],
   exports: [
     CarouselComponent,

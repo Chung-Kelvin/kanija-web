@@ -1,40 +1,115 @@
 <nz-table
-  #basicTable
-  [nzData]="listOfData"
+  #table
+  [nzLoading]="loading"
+  [nzData]="data"
   [nzSize]="'middle'"
   class="product-table"
+  [nzScroll]="scroll"
 >
   <thead>
     <tr>
       <th *ngIf="showNumber" [nzAlign]="'center'" [nzWidth]="'56px'">No</th>
-      <th *ngFor="let config of tableConfig" [nzAlign]="config.align ?? null">
+      <th *ngFor="let config of columns" [nzAlign]="config.align ?? null">
         {{ config.header }}
       </th>
       <th *ngIf="showCheckbox" [nzShowCheckbox]="showCheckbox"></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of listOfData; let i = index">
+    <tr *ngFor="let item of data; let i = index">
       <td *ngIf="showNumber" [nzAlign]="'center'">{{ i + 1 }}</td>
 
-      <td *ngFor="let col of tableConfig">
-        {{ getValue(data, col.key) }}
-      </td>
+      <ng-container *ngFor="let col of columns">
+        <ng-container [ngSwitch]="col.pipe">
+          <ng-container *ngSwitchCase="'color'">
+            <td [align]="'center'">
+              <ng-container *ngIf="item.status | statusStyle as st">
+                <span
+                  class="px-2 py-1 rounded inline-block text-center w-24"
+                  [ngClass]="st.style"
+                  nz-tooltip
+                  [nzTooltipTitle]="st.label"
+                  nzTooltipPlacement="bottom"
+                >
+                  {{ st.label }}
+                </span>
+              </ng-container>
+            </td>
+          </ng-container>
+          <ng-container *ngSwitchCase="'action'">
+            <td nzWidth="200px" nzRight="0px" [align]="'center'">
+              <ng-container *ngIf="col.action?.isEdit">
+                <button
+                  class="mx-1"
+                  nzShape="circle"
+                  nz-button
+                  nzType="primary"
+                  nz-tooltip
+                  [nzTooltipTitle]="'button.edit' | translate"
+                  nzTooltipPlacement="bottom"
+                  (click)="onEdit(item)"
+                >
+                  <i nz-icon nzType="edit"></i>
+                </button>
+              </ng-container>
+              <ng-container *ngIf="col.action?.isView">
+                <button
+                  class="mx-1"
+                  nzShape="circle"
+                  nz-button
+                  nzType="primary"
+                  nz-tooltip
+                  [nzTooltipTitle]="'button.view' | translate"
+                  nzTooltipPlacement="bottom"
+                  (click)="onView(item)"
+                >
+                  <i nz-icon nzType="eye"></i>
+                </button>
+              </ng-container>
+              <ng-container *ngIf="col.action?.isCustom">
+                <button
+                  class="mx-1"
+                  nzShape="circle"
+                  nz-button
+                  nzType="primary"
+                  nz-tooltip
+                  [nzTooltipTitle]="'button.copy' | translate"
+                  nzTooltipPlacement="bottom"
+                  (click)="onCopy(item)"
+                >
+                  <i nz-icon nzType="copy"></i>
+                </button>
+              </ng-container>
+              <ng-container *ngIf="col.action?.isDelete">
+                <button
+                  class="mx-1"
+                  nzShape="circle"
+                  nz-button
+                  nzType="primary"
+                  nz-tooltip
+                  [nzTooltipTitle]="'button.delete' | translate"
+                  nzTooltipPlacement="bottom"
+                  (click)="onDelete(item)"
+                >
+                  <i nz-icon nzType="delete"></i>
+                </button>
+              </ng-container>
+            </td>
+          </ng-container>
 
-      <td [nzAlign]="'center'">
-        <button nz-button nz-tooltip="Edit" nzShape="circle" nzType="default">
-          <i nz-icon></i>
-        </button>
-        <button
-          class="delete-btn"
-          nz-button
-          nz-tooltip="Delete"
-          nzShape="circle"
-          nzType="default"
-        >
-          <i nz-icon nzType="delete"></i>
-        </button>
-      </td>
+          <ng-container *ngSwitchDefault>
+            <td [nzAlign]="col.align ?? null">
+              <span
+                nz-tooltip
+                nzTooltipTitle="{{ getValue(item, col.key) }}"
+                nzTooltipPlacement="bottom"
+              >
+                {{ getValue(item, col.key) }}
+              </span>
+            </td>
+          </ng-container>
+        </ng-container>
+      </ng-container>
     </tr>
   </tbody>
 </nz-table>

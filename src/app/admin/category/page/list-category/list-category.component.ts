@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StatusValue } from 'src/app/shared/models/status.model';
 
 interface Product {
   image: string;
@@ -15,31 +16,83 @@ interface Product {
   styleUrls: ['./list-category.component.scss'],
 })
 export class ListCategoryComponent {
-  listOfData = [
+  mockData = [
     {
-      image: 'assets/img/apple-watch.png',
-      name: 'Apple Watch Series 4',
-      category: 'Digital Product',
-      price: 690,
-      piece: 63,
-      colors: ['#333', '#ccc', '#ff4d4f'],
+      categoryName: 'Apple Watch Series 4',
+      description: 'Digital Product',
+      quanityProduct: 690,
+      status: StatusValue.ACTIVE,
     },
     {
-      image: 'assets/img/microsoft-headsquare.png',
-      name: 'Microsoft Headsquare',
-      category: 'Digital Product',
-      price: 190,
-      piece: 13,
-      colors: ['#000', '#f5222d', '#faad14', '#1890ff'],
+      categoryName: 'Microsoft Headsquare',
+      description: 'Digital Product',
+      quanityProduct: 190,
+      status: StatusValue.INACTIVE,
     },
     {
-      image: 'assets/img/women-dress.png',
-      name: "Women's Dress",
-      category: 'Fashion',
-      price: 640,
-      piece: 635,
-      colors: ['#722ed1', '#eb2f96', '#1890ff'],
+      categoryName: "Women's Dress",
+      description: 'Fashion',
+      quanityProduct: 640,
+      status: StatusValue.PROCESSING,
     },
-    // ... thêm các sản phẩm khác
+    {
+      categoryName: 'Apple Watch Series 4',
+      description: 'Digital Product',
+      quanityProduct: 690,
+      status: StatusValue.ACTIVE,
+    },
+    {
+      categoryName: 'Microsoft Headsquare',
+      description: 'Digital Product',
+      quanityProduct: 190,
+      status: StatusValue.INACTIVE,
+    },
+    {
+      categoryName: "Women's Dress",
+      description: 'Fashion',
+      quanityProduct: 640,
+      status: StatusValue.PROCESSING,
+    },
+    {
+      categoryName: 'Apple Watch Series 4',
+      description: 'Digital Product',
+      quanityProduct: 690,
+      status: StatusValue.ACTIVE,
+    },
+    {
+      categoryName: 'Microsoft Headsquare',
+      description: 'Digital Product',
+      quanityProduct: 190,
+      status: StatusValue.INACTIVE,
+    },
+    {
+      categoryName: "Women's Dress",
+      description: 'Fashion',
+      quanityProduct: 640,
+      status: StatusValue.PROCESSING,
+    },
+    {
+      categoryName: 'Apple Watch Series 4',
+      description: 'Digital Product',
+      quanityProduct: 690,
+      status: StatusValue.ACTIVE,
+    },
+    {
+      categoryName: 'Microsoft Headsquare',
+      description: 'Digital Product',
+      quanityProduct: 190,
+      status: StatusValue.INACTIVE,
+    },
+    {
+      categoryName: "Women's Dress",
+      description: 'Fashion',
+      quanityProduct: 640,
+      status: StatusValue.PROCESSING,
+    },
   ];
+
+  receiveData(event: any) {
+    console.log('Received action:', event.action);
+    console.log('Row data:', event.row);
+  }
 }

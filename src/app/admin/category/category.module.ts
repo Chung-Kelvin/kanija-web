@@ -19,7 +19,7 @@ import { ComponentModule } from 'src/app/shared/component/component.module';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'list',
     component: ListCategoryComponent,
   },
   {
