@@ -22,6 +22,12 @@ export interface ColumnTableConfig {
   };
 }
 
+export interface Pagination {
+  pageIndex: number;
+  pageSize: number;
+  total: number;
+}
+
 export const TABLE_CONFIG: ColumnTableConfig[] = [
   { key: 'categoryName', header: 'Category name', align: 'left' },
   {

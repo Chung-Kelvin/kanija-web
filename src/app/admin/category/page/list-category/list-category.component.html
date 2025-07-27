@@ -1,23 +1,33 @@
 <nz-breadcrumb>
   <nz-breadcrumb-item>
     <a [routerLink]="['/admin/category']">{{
-      "category.category" | translate
-    }}</a>
+        "category.category" | translate
+      }}</a>
   </nz-breadcrumb-item>
   <nz-breadcrumb-item>{{ "category.create" | translate }}</nz-breadcrumb-item>
 </nz-breadcrumb>
 <div class="bg-white-200 w-full rounded-lg containerr">
   <div class="flex justify-between items-center p-2">
     <div>
-      <span class="text-lg font-bold">Categories list(10)</span>
+      <span class="text-lg font-bold">{{
+          "category.header.categories_list"
+            | translate: {count: mockData.length}
+        }}</span>
       <span class="text-lg font-bold"> - </span>
-      <span class="text-lg font-bold">Selected 10 record</span>
+      <span class="text-lg font-bold">
+        {{
+          "table.title_select_records"
+            | translate: {count: mockData.length}
+        }}
+      </span>
     </div>
     <div>
-      <button nz-button nzType="primary" class="bg-blue-500 text-white">
-        Add new
+      <button class="bg-blue-500 text-white" nz-button nzType="primary">
+        {{
+          'button.add_new'|translate
+        }}
       </button>
     </div>
   </div>
-  <kan-table [data]="mockData" (onAction)="receiveData($event)"></kan-table>
+  <kan-table (onAction)="receiveData($event)" [data]="mockData"></kan-table>
 </div>

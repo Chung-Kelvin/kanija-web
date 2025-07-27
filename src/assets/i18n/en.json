@@ -43,7 +43,10 @@
     "selected_record": "Selected {{count}} record"
   },
   "table": {
+    "title_select_record": "Select {{count}} record",
+    "title_select_records": "Select {{count}} records",
     "thead": {
+      "no": "No.",
       "category_name": "Category name",
       "description": "Description"
     }
