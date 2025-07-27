@@ -29,20 +29,20 @@ export interface Pagination {
 }
 
 export const TABLE_CONFIG: ColumnTableConfig[] = [
-  { key: 'categoryName', header: 'Category name', align: 'left' },
+  { key: 'categoryName', header: 'table.thead.category_name', align: 'left' },
   {
     key: 'description',
-    header: 'Description',
+    header: 'table.thead.description',
     align: 'left',
   },
   {
     key: 'quanityProduct',
-    header: 'Quanity product',
+    header: 'table.thead.quanity_products',
     align: 'center',
   },
   {
     key: 'status',
-    header: 'Status',
+    header: 'table.thead.status',
     align: 'center',
     tdClass: 'bg-red-500 text-white',
     pipe: 'color',

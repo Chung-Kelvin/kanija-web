@@ -21,7 +21,7 @@
         <ng-container *ngFor="let config of columns">
           <ng-container *ngIf="config.key !== 'action'; else actionColumn">
             <th [nzAlign]="config.align ?? null">
-              {{ config.header }}
+              {{ config.header | translate }}
             </th>
           </ng-container>
           <ng-template #actionColumn>
@@ -30,7 +30,7 @@
               [nzWidth]="config.width ?? '200px'"
               nzRight="0px"
             >
-              {{ config.header }}
+              {{ config.header | translate }}
             </th>
           </ng-template>
         </ng-container>

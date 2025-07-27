@@ -48,7 +48,14 @@
     "thead": {
       "no": "No.",
       "category_name": "Category name",
-      "description": "Description"
+      "description": "Description",
+      "action": "Action",
+      "created_at": "Created at",
+      "updated_at": "Updated at",
+      "status": "Status",
+      "created_by": "Created by",
+      "updated_by": "Updated by",
+      "quanity_products": "Quantity products"
     }
   },
   "notification": {},
