@@ -18,72 +18,21 @@ interface Product {
 export class ListCategoryComponent {
   mockData = [
     {
+      id: 0,
       categoryName: 'Apple Watch Series 4',
       description: 'Digital Product',
       quanityProduct: 690,
       status: StatusValue.ACTIVE,
     },
     {
+      id: 1,
       categoryName: 'Microsoft Headsquare',
       description: 'Digital Product',
       quanityProduct: 190,
       status: StatusValue.INACTIVE,
     },
     {
-      categoryName: "Women's Dress",
-      description: 'Fashion',
-      quanityProduct: 640,
-      status: StatusValue.PROCESSING,
-    },
-    {
-      categoryName: 'Apple Watch Series 4',
-      description: 'Digital Product',
-      quanityProduct: 690,
-      status: StatusValue.ACTIVE,
-    },
-    {
-      categoryName: 'Microsoft Headsquare',
-      description: 'Digital Product',
-      quanityProduct: 190,
-      status: StatusValue.INACTIVE,
-    },
-    {
-      categoryName: "Women's Dress",
-      description: 'Fashion',
-      quanityProduct: 640,
-      status: StatusValue.PROCESSING,
-    },
-    {
-      categoryName: 'Apple Watch Series 4',
-      description: 'Digital Product',
-      quanityProduct: 690,
-      status: StatusValue.ACTIVE,
-    },
-    {
-      categoryName: 'Microsoft Headsquare',
-      description: 'Digital Product',
-      quanityProduct: 190,
-      status: StatusValue.INACTIVE,
-    },
-    {
-      categoryName: "Women's Dress",
-      description: 'Fashion',
-      quanityProduct: 640,
-      status: StatusValue.PROCESSING,
-    },
-    {
-      categoryName: 'Apple Watch Series 4',
-      description: 'Digital Product',
-      quanityProduct: 690,
-      status: StatusValue.ACTIVE,
-    },
-    {
-      categoryName: 'Microsoft Headsquare',
-      description: 'Digital Product',
-      quanityProduct: 190,
-      status: StatusValue.INACTIVE,
-    },
-    {
+      id: 2,
       categoryName: "Women's Dress",
       description: 'Fashion',
       quanityProduct: 640,
@@ -91,8 +40,8 @@ export class ListCategoryComponent {
     },
   ];
 
-  receiveData(event: any) {
-    console.log('Received action:', event.action);
-    console.log('Row data:', event.row);
-  }
+  selectedItems: any[] = [];
+
+  receiveData(event: any) {}
+  test(event: any) {}
 }
