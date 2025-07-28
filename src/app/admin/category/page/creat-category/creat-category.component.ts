@@ -34,7 +34,7 @@ export class CreatCategoryComponent implements OnInit, OnDestroy {
       .select(CategorySelectors.selectCategoryList)
       .pipe(skip(1), takeUntil(this.destroy$))
       .subscribe((res) => {
-        console.log(res);
+        res;
         if (res.success) {
           this.notifyService.success('Thành công', res.message);
         } else {

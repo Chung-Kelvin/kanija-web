@@ -15,6 +15,7 @@ import { AdminRoutingModule } from 'src/app/admin/admin-routing.module';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { TranslateModule } from '@ngx-translate/core';
 import { StatusStylePipe } from '../pipe/status.pipe';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 @NgModule({
   declarations: [
     CarouselComponent,
@@ -35,6 +36,7 @@ import { StatusStylePipe } from '../pipe/status.pipe';
     AdminRoutingModule,
     NzIconModule,
     TranslateModule,
+    NzEmptyModule,
   ],
   exports: [
     CarouselComponent,

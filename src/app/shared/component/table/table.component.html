@@ -1,4 +1,4 @@
-<div>
+<div class="mx-2">
   <nz-table
     #table
     [nzData]="data"
@@ -6,6 +6,9 @@
     [nzScroll]="scroll"
     [nzSize]="'middle'"
     class="product-table"
+    [nzShowPagination]="true"
+    [nzSimple]="true"
+    [nzNoResult]="noData"
   >
     <thead>
       <tr>
@@ -80,7 +83,6 @@
                     nzShape="circle"
                     nzSize="small"
                     nzTooltipPlacement="bottom"
-                    nzType="primary"
                   >
                     <i nz-icon nzType="edit"></i>
                   </button>
@@ -95,7 +97,6 @@
                     nzShape="circle"
                     nzSize="small"
                     nzTooltipPlacement="bottom"
-                    nzType="primary"
                   >
                     <i nz-icon nzType="eye"></i>
                   </button>
@@ -110,7 +111,6 @@
                     nzShape="circle"
                     nzSize="small"
                     nzTooltipPlacement="bottom"
-                    nzType="primary"
                   >
                     <i nz-icon nzType="copy"></i>
                   </button>
@@ -125,9 +125,8 @@
                     nzShape="circle"
                     nzSize="small"
                     nzTooltipPlacement="bottom"
-                    nzType="primary"
                   >
-                    <i nz-icon nzType="delete"></i>
+                    <i nz-icon class="text-red-500" nzType="delete"></i>
                   </button>
                 </ng-container>
               </td>
@@ -157,3 +156,11 @@
     </tbody>
   </nz-table>
 </div>
+
+<ng-template #noData>
+  <div class="text-center p-4">
+    <nz-empty
+      nzNotFoundImage="simple"
+      nzNotFoundContent="{{ 'table.no_data' | translate }}"
+    ></nz-empty></div
+></ng-template>

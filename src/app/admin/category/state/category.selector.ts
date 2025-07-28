@@ -18,3 +18,13 @@ export const selectCategoryError = createSelector(
   selectCategoryState,
   (state) => state.error,
 );
+
+export const selectCategoryListCategories = createSelector(
+  selectCategoryState,
+  (state) => state.listCategories,
+);
+
+export const selectCategoriesLoading = createSelector(
+  selectCategoryState,
+  (state) => state.loading,
+);

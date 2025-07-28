@@ -45,6 +45,7 @@
   "table": {
     "title_select_record": "Select {{count}} record",
     "title_select_records": "Select {{count}} records",
+    "no_data": "No data available",
     "thead": {
       "no": "No.",
       "category_name": "Category name",

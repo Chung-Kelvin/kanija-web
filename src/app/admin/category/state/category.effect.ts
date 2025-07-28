@@ -1,32 +1,50 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { CategoryService } from '../service/category.service';
 import { Injectable } from '@angular/core';
-import {
-  createCategory,
-  createCategoryFail,
-  createCategorySuccess,
-} from './category.action';
+
+import * as CategoryActions from './category.action';
 import { catchError, map, mergeMap, of } from 'rxjs';
 
 @Injectable()
 export class CategoryEffects {
-  createCategory$ = createEffect(() =>
+  constructor(
+    private actions$: Actions,
+    private categoryService: CategoryService,
+  ) {}
+
+  getAllCategories$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(createCategory),
-      mergeMap(({ payload }) =>
-        this.categoryService.createCategory(payload).pipe(
-          map((res: any) => createCategorySuccess({ success: res })),
+      ofType(CategoryActions.getAllCategories),
+      mergeMap(() =>
+        this.categoryService.getAllCategories().pipe(
+          map((res: any) =>
+            CategoryActions.getAllCategoriesSuccess({ success: res }),
+          ),
           catchError((err) => {
-            console.error('API 400 Response:', err.error); // Response từ API khi lỗi
-            return of(createCategoryFail({ error: err.error }));
+            console.error('API 400 Response:', err.error);
+            return of(
+              CategoryActions.getAllCategoriesFail({ error: err.error }),
+            );
           }),
         ),
       ),
     ),
   );
 
-  constructor(
-    private actions$: Actions,
-    private categoryService: CategoryService,
-  ) {}
+  createCategory$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(CategoryActions.createCategory),
+      mergeMap(({ payload }) =>
+        this.categoryService.createCategory(payload).pipe(
+          map((res: any) =>
+            CategoryActions.createCategorySuccess({ success: res }),
+          ),
+          catchError((err) => {
+            console.error('API 400 Response:', err.error);
+            return of(CategoryActions.createCategoryFail({ error: err.error }));
+          }),
+        ),
+      ),
+    ),
+  );
 }

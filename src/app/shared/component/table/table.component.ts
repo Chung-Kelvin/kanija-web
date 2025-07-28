@@ -22,28 +22,31 @@ export class TableComponent implements OnInit {
   @Input() showNumber: boolean = true;
   @Input() showCheckbox: boolean = false;
   @Input() data: any[] = [];
-  @Input() loading: boolean = false;
+  @Input() loading: any = false;
   @Input() scroll: any = { x: '1000px', y: '300px' };
-  @Input() scrollX: string = '1000px';
-  @Input() scrollY: string = '300px';
+
   @Input() columns: any[] = TABLE_CONFIG;
   @Input() pagination: Pagination = {
     pageIndex: 1,
     pageSize: 10,
     total: 0,
   };
+
   //output
   @Output() onAction = new EventEmitter<any>();
   @Output() onSelectItems = new EventEmitter<any>();
   @Output() onCheckItems = new EventEmitter<any>();
 
+  //local variables
+  scrollX: string = '1000px';
+  scrollY: string = '300px';
+
   allChecked: boolean = false;
   indeterminate: boolean = false;
-
   setKeyCheck = new Set<any>();
 
   ngOnInit(): void {
-    console.log('Data Map:');
+    ('Data Map:');
   }
 
   checkAll(value: boolean): void {
@@ -85,7 +88,6 @@ export class TableComponent implements OnInit {
   }
 
   getStatusStyle(status: StatusValue) {
-    console.log('getStatusStyle called with status:', status);
     const statusOjb = STATUS.find((item) => item.value === status);
 
     return statusOjb;

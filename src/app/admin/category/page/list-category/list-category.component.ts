@@ -1,47 +1,55 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StatusValue } from 'src/app/shared/models/status.model';
-
-interface Product {
-  image: string;
-  name: string;
-  category: string;
-  price: number;
-  piece: number;
-  colors: string[];
-}
+import { TABLE_CONFIG } from '../../model';
+import { Store } from '@ngrx/store';
+import * as CategoryActions from '../../state/category.action';
+import * as CategorySelectors from '../../state/category.selector';
+import { skip, Subject, takeUntil } from 'rxjs';
+import { KanNotifyService } from 'src/app/shared/service/kan-notify.service';
 
 @Component({
   selector: 'kan-list-category',
   templateUrl: './list-category.component.html',
   styleUrls: ['./list-category.component.scss'],
 })
-export class ListCategoryComponent {
-  mockData = [
-    {
-      id: 0,
-      categoryName: 'Apple Watch Series 4',
-      description: 'Digital Product',
-      quanityProduct: 690,
-      status: StatusValue.ACTIVE,
-    },
-    {
-      id: 1,
-      categoryName: 'Microsoft Headsquare',
-      description: 'Digital Product',
-      quanityProduct: 190,
-      status: StatusValue.INACTIVE,
-    },
-    {
-      id: 2,
-      categoryName: "Women's Dress",
-      description: 'Fashion',
-      quanityProduct: 640,
-      status: StatusValue.PROCESSING,
-    },
-  ];
-
+export class ListCategoryComponent implements OnInit {
+  private destroy$ = new Subject<void>();
+  columnns = TABLE_CONFIG;
+  loading$: any;
+  data: any = [];
   selectedItems: any[] = [];
 
-  receiveData(event: any) {}
-  test(event: any) {}
+  constructor(
+    private readonly store: Store,
+    private notifyService: KanNotifyService,
+  ) {}
+
+  ngOnInit(): void {
+    const payload = {};
+    this.loading$ = this.store.select(
+      CategorySelectors.selectCategoriesLoading,
+    );
+    this.store.dispatch(CategoryActions.getAllCategories({ payload }));
+    this.store
+      .select(CategorySelectors.selectCategoryListCategories)
+      .pipe(skip(1), takeUntil(this.destroy$))
+      .subscribe((res) => {
+        if (res.success) {
+          this.data = this.mappingData(res.data);
+          this.notifyService.success('Thành công', res.message);
+        }
+      });
+  }
+
+  mappingData(res: any): any {
+    return res.map((item: any) => ({
+      id: item.id,
+      categoryName: item.name,
+      description: item.description,
+    }));
+  }
+
+  onAdd() {
+    ('Add new category clicked');
+  }
 }
