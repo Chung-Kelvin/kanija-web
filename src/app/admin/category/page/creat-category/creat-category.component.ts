@@ -4,7 +4,7 @@ import { createCategory } from '../../state/category.action';
 import * as CategorySelectors from '../../state/category.selector';
 import { Store } from '@ngrx/store';
 import { KanNotifyService } from '../../../../shared/service/kan-notify.service';
-import { filter, skip, Subject, takeUntil } from 'rxjs';
+import { skip, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'kan-creat-category',
@@ -51,6 +51,7 @@ export class CreatCategoryComponent implements OnInit, OnDestroy {
       description: value.description,
       parentId: value.parentCategory === '' ? undefined : value.parentCategory,
     };
+
     this.store.dispatch(createCategory({ payload: payload }));
   }
 

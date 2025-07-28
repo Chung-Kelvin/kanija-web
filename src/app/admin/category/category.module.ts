@@ -16,6 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { ComponentModule } from 'src/app/shared/component/component.module';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 const routes: Routes = [
   {
@@ -44,6 +45,7 @@ const routes: Routes = [
     NzToolTipModule,
     NgOptimizedImage,
     ComponentModule,
+    NzModalModule,
   ],
   declarations: [CreatCategoryComponent, ListCategoryComponent],
   exports: [CreatCategoryComponent, ListCategoryComponent],

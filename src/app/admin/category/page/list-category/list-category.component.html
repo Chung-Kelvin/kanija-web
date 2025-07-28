@@ -1,8 +1,8 @@
 <nz-breadcrumb>
   <nz-breadcrumb-item>
     <a [routerLink]="['/admin/category']">{{
-      "category.category" | translate
-    }}</a>
+        "category.category" | translate
+      }}</a>
   </nz-breadcrumb-item>
   <nz-breadcrumb-item>{{ "category.create" | translate }}</nz-breadcrumb-item>
 </nz-breadcrumb>
@@ -10,8 +10,8 @@
   <div class="flex justify-between items-center p-2">
     <div>
       <span class="text-lg font-bold">{{
-        "category.header.categories_list" | translate: { count: data.length }
-      }}</span>
+          "category.header.categories_list" | translate: {count: data.length}
+        }}</span>
       <span *ngIf="selectedItems.length > 0" class="text-lg font-bold">
         -
       </span>
@@ -19,32 +19,32 @@
       <span *ngIf="selectedItems.length > 1" class="text-lg font-bold">
         {{
           "table.title_select_records"
-            | translate: { count: selectedItems.length }
+            | translate: {count: selectedItems.length}
         }}
       </span>
       <span *ngIf="selectedItems.length === 1" class="text-lg font-bold">
         {{
           "table.title_select_record"
-            | translate: { count: selectedItems.length }
+            | translate: {count: selectedItems.length}
         }}
       </span>
     </div>
     <div>
       <button
+        (click)="onAdd()"
         class="bg-blue-500 text-white"
         nz-button
         nzType="primary"
-        (click)="onAdd()"
       >
         {{ "button.add_new" | translate }}
       </button>
     </div>
   </div>
   <kan-table
-    [loading]="loading$ | async"
-    [data]="data"
-    [showCheckbox]="true"
     (onCheckItems)="selectedItems = $event"
-    [columns]="columnns"
+    [columns]="columns"
+    [data]="data"
+    [loading]="loading$ | async"
+    [showCheckbox]="true"
   ></kan-table>
 </div>

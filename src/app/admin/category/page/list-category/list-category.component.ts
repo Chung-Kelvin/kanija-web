@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { StatusValue } from 'src/app/shared/models/status.model';
 import { TABLE_CONFIG } from '../../model';
 import { Store } from '@ngrx/store';
 import * as CategoryActions from '../../state/category.action';
 import * as CategorySelectors from '../../state/category.selector';
 import { skip, Subject, takeUntil } from 'rxjs';
 import { KanNotifyService } from 'src/app/shared/service/kan-notify.service';
+import { NzModalService } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'kan-list-category',
@@ -13,15 +13,16 @@ import { KanNotifyService } from 'src/app/shared/service/kan-notify.service';
   styleUrls: ['./list-category.component.scss'],
 })
 export class ListCategoryComponent implements OnInit {
-  private destroy$ = new Subject<void>();
-  columnns = TABLE_CONFIG;
+  columns = TABLE_CONFIG;
   loading$: any;
   data: any = [];
   selectedItems: any[] = [];
+  private destroy$ = new Subject<void>();
 
   constructor(
     private readonly store: Store,
     private notifyService: KanNotifyService,
+    private modal: NzModalService,
   ) {}
 
   ngOnInit(): void {
@@ -50,6 +51,9 @@ export class ListCategoryComponent implements OnInit {
   }
 
   onAdd() {
-    ('Add new category clicked');
+    this.modal.info({
+      nzTitle: 'Thông tin',
+      nzContent: 'Đây là nội dung thông báo.',
+    });
   }
 }
