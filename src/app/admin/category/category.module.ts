@@ -17,6 +17,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { ComponentModule } from 'src/app/shared/component/component.module';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { CategoryFormComponent } from './component/category-form/category-form.component';
 
 const routes: Routes = [
   {
@@ -47,7 +48,7 @@ const routes: Routes = [
     ComponentModule,
     NzModalModule,
   ],
-  declarations: [CreatCategoryComponent, ListCategoryComponent],
+  declarations: [CreatCategoryComponent, ListCategoryComponent, CategoryFormComponent],
   exports: [CreatCategoryComponent, ListCategoryComponent],
 })
 export class CategoryModule {}

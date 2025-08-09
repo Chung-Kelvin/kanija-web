@@ -1,8 +1,12 @@
-<nz-form-item class="mb-0">
+<nz-form-item>
   <nz-form-control [nzErrorTip]="errorTip">
-    <nz-form-label>{{ label }}</nz-form-label>
-    <ng-content></ng-content
-    >
+    <ng-container *ngIf="label">
+      <label class="text-sm font-semibold text-gray-700">
+        {{ label }}
+      </label>
+      <nz-form-label>{{ label }}</nz-form-label>
+    </ng-container>
+    <ng-content></ng-content>
   </nz-form-control>
 </nz-form-item>
 

@@ -6,6 +6,7 @@ export interface CategoryState {
   loading: boolean;
   error: any;
   listCategories: any;
+  createCategory: any;
 }
 
 export const initialState: CategoryState = {
@@ -13,6 +14,7 @@ export const initialState: CategoryState = {
   loading: false,
   error: null,
   listCategories: null,
+  createCategory: null,
 };
 
 export const categoryReducer = createReducer(
@@ -48,7 +50,7 @@ export const categoryReducer = createReducer(
   // khi thành công
   on(CategoryActions.createCategorySuccess, (state, { success }) => ({
     ...state,
-    list: success,
+    createCategory: success,
     loading: false,
   })),
 

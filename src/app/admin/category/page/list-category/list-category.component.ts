@@ -5,7 +5,9 @@ import * as CategoryActions from '../../state/category.action';
 import * as CategorySelectors from '../../state/category.selector';
 import { skip, Subject, takeUntil } from 'rxjs';
 import { KanNotifyService } from 'src/app/shared/service/kan-notify.service';
-import { NzModalService } from 'ng-zorro-antd/modal';
+import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
+import { Router } from '@angular/router';
+import { CategoryFormComponent } from '../../component/category-form/category-form.component';
 
 @Component({
   selector: 'kan-list-category',
@@ -17,12 +19,14 @@ export class ListCategoryComponent implements OnInit {
   loading$: any;
   data: any = [];
   selectedItems: any[] = [];
+  modalCreateRef: NzModalRef | undefined;
   private destroy$ = new Subject<void>();
 
   constructor(
     private readonly store: Store,
     private notifyService: KanNotifyService,
     private modal: NzModalService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {

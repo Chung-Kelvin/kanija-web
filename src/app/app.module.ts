@@ -14,6 +14,7 @@ import { ControlModule } from './shared/control/control.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
+import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
 
 registerLocaleData(en);
 
@@ -45,7 +46,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
     EffectsModule.forRoot([]),
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

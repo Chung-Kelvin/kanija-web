@@ -2,8 +2,17 @@
   "menu": {},
   "breadcrumb": {},
   "header": {},
-  "label": {},
-  "placeholder": {},
+  "label": {
+    "category_name": "Category name",
+    "description": "Description",
+    "status": "Status",
+    "created_at": "Created at",
+    "category_parent": "Category parent"
+  },
+  "placeholder": {
+    "type_category_name": "Type category name",
+    "type_description": "Type description"
+  },
   "button": {
     "add_new": "Add new",
     "save": "Save",
@@ -63,6 +72,7 @@
   "error": {},
   "category": {
     "header": {
+      "create_category": "Create new category",
       "categories_list": "Categories list ({{count}})"
     }
   }

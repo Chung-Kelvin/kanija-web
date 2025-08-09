@@ -1,0 +1,22 @@
+<form [formGroup]="form">
+  <kan-form-control>
+    <label class="required">{{ "label.category_name" | translate }}</label>
+    <kan-input
+      [placeholder]="'placeholder.type_category_name' | translate"
+      formControlName="name"
+    ></kan-input>
+  </kan-form-control>
+
+  <kan-form-control>
+    <label>{{ "label.description" | translate }}</label>
+    <kan-input
+      [placeholder]="'placeholder.type_description' | translate"
+      formControlName="description"
+    ></kan-input>
+  </kan-form-control>
+
+  <kan-form-control>
+    <label>{{ "label.category_parent" | translate }}</label>
+    <kan-input formControlName="parentCategory"></kan-input>
+  </kan-form-control>
+</form>
