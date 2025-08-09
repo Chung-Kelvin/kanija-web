@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CardProductComponent } from './card-product/card-product.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
@@ -16,6 +16,8 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { TranslateModule } from '@ngx-translate/core';
 import { StatusStylePipe } from '../pipe/status.pipe';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { FormActionComponent } from './form-action/form-action.component';
+
 @NgModule({
   declarations: [
     CarouselComponent,
@@ -26,6 +28,7 @@ import { NzEmptyModule } from 'ng-zorro-antd/empty';
     AvatarGroupComponent,
     TableComponent,
     StatusStylePipe,
+    FormActionComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +48,7 @@ import { NzEmptyModule } from 'ng-zorro-antd/empty';
     HeaderComponent,
     AvatarComponent,
     TableComponent,
+    FormActionComponent,
   ],
 })
 export class ComponentModule {}
